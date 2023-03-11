@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participação nos lucros</title>
+</head>
+<body>
+    <h1>Participação de lucros para os funcionários</h1>
+    <p>Funcionário: <span id="colaborador"> </span></p>
+    <p>Nome: <span id="nomeFun"></span></p>
+    <p>Bônus: <span id="bonusFun"></span></p>
+    <script>
+        let funcionario = Number(prompt("Você é um funcionário? \n 1 - Sim \n 2 - Não"));
+        let bonus;
+        let fun;
+        let nome;
+        let tempo;
+
+        if(funcionario === 1){
+            fun = "Você tem direito ao bônus.";
+            nome = prompt("Digite seu nome: ");
+            tempo = Number(prompt("Quanto tempo você têm na empresa? \n 1 - 1 a 10 anos \n 2 - 10 a 20 anos \n 3 - 20 a 30 anos \n 4 - Acima de 30 anos"));
+            if(tempo === 1){
+                bonus = "Você tem direito a receber R$ 2.500,00 de bônus";
+            }else if(tempo === 2){
+                bonus = "Você tem direito a receber R$ 10.000,00 de bônus";
+            }else if(tempo === 3){
+                bonus = "Você tem direito a receber R$ 15.000,00 de bônus";
+            }else if(tempo === 4){
+                bonus = "Você tem direito a receber R$ 20.000,00 de bônus";
+            } else {
+                bonus = "Você não tem direito ao bônus";
+            }
+        } else {
+            fun = "Você não trabalha conosco.";
+        }
+
+        document.getElementById("colaborador").innerHTML = fun;
+        document.getElementById("nomeFun").innerHTML = nome;
+        document.getElementById("bonusFun").innerHTML = bonus;
+
+    </script>
+</body>
+</html>
